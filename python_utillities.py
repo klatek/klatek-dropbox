@@ -38,7 +38,7 @@ with SCPClient(ssh.get_transport()) as scp:
 
 def checklogin():
     attemptCount = 0
-    users = open("users.txt").read().split("\n")
+    users = open("D:/1.APPS/Python 3.6.4/users.txt").read().split("\n")
     for i in range(len(users)):
         users[i] = users[i].split("|")
         #print (users) --- display all collected data from the file
