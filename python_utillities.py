@@ -42,7 +42,7 @@ def checklogin():
     ## baza danych hasel ma wygladac 'klatek|password|Karol|Latek' 
     for i in range(len(users)):
         users[i] = users[i].split("|")
-        print (users) ###--- display allcollected data from the file
+        #print (users) ###--- display allcollected data from the file
         
 
     while attemptCount < 3:
