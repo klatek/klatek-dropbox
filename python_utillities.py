@@ -39,23 +39,27 @@ with SCPClient(ssh.get_transport()) as scp:
 def checklogin():
     attemptCount = 0
     users = open("C:/APPS/Git/projects/klatek-dropbox/users.txt").read().split("\n")
+    ## baza danych hasel ma wygladac 'klatek|password|Karol|Latek' 
     for i in range(len(users)):
         users[i] = users[i].split("|")
-        #print (users) --- display all collected data from the file
+        print (users) ###--- display allcollected data from the file
+        
 
     while attemptCount < 3:
         username = str(input("Username: "))
         password = str(input("Password: "))
 
         for user in users:
-            uname = user[4]
-            pword = user[5]
-
+            uname = user[0]
+            pword = user[1]
+            name = user[2]
+            lastname = user[3]
+            
             if uname == username and pword == password:
                 print ("\n")
                 print ("Login succesful !!")
                 print ("\n")
-                print ("Welcome back " + user[0]+ " " + user[1] + "!!!")
+                print ("Welcome back " + user[2]+ " " + user[3] + "!!!")
                 print ("\n")
                 return #return command get out from definition
         else:
